@@ -1,0 +1,182 @@
+/* ─── Layout – mirrors about-me exactly ─────────────────────── */
+.my-work {
+	min-height: 100vh;
+	display: flex;
+	padding: 2rem 4rem;
+}
+
+.my-work .title {
+	margin-top: 6rem;
+}
+
+/* Force the same visual overlap as About Me / TechStack.
+   line-height:1 removes half-leading so letters fill the full line box.
+   The negative margin-bottom on primary-text then pulls WORK up to overlap MY,
+   matching the effect the Fugaz One font naturally produces in shorter sections. */
+.my-work .title .primary-text {
+	line-height: 1;
+	margin-bottom: -4rem;
+}
+
+.my-work .title .secondary-text {
+	line-height: 1;
+}
+
+/* Both left and right divs get 50% width + 1rem padding, same as about-me > div */
+.my-work>div {
+	width: 50%;
+	padding: 1rem;
+}
+
+/* ─── Right: scrollable card list ───────────────────────────── */
+.my-work__right {
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
+	/* top padding pushes first card into center, bottom padding keeps last card centerable */
+	padding-top: 20vh;
+	padding-bottom: 20vh;
+}
+
+/* ─── Card wrapper ───────────────────────────────────────────── */
+.work-card-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+/* ─── Card ────────────────────────────────────────────────────── */
+.work-card {
+	width: 100%;
+	max-width: 520px;
+	border-radius: 18px;
+	padding: 2rem 2.2rem;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+
+	/* idle state */
+	transform: scale(0.78);
+	opacity: 0.35;
+	filter: blur(1.5px);
+	transition:
+		transform 0.55s cubic-bezier(0.34, 1.2, 0.64, 1),
+		opacity 0.45s ease,
+		filter 0.45s ease,
+		box-shadow 0.45s ease;
+	cursor: default;
+}
+
+/* Active (centred) card */
+.work-card--active {
+	transform: scale(1);
+	opacity: 1;
+	filter: blur(0px);
+	box-shadow:
+		0 0 0 1px var(--card-accent),
+		0 0 30px -4px var(--card-accent),
+		0 0 80px -10px var(--card-accent),
+		0 20px 60px -20px rgba(0, 0, 0, 0.6);
+	background: linear-gradient(135deg,
+			rgba(31, 195, 255, 0.06),
+			rgba(255, 255, 255, 0.03));
+	border-color: rgba(31, 195, 255, 0.3);
+}
+
+/* ─── Card internals ──────────────────────────────────────────── */
+.work-card__header {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	margin-bottom: 1rem;
+}
+
+.work-card__title {
+	font-family: 'Fugaz One', sans-serif;
+	font-size: 1.8rem;
+	color: #fff;
+	letter-spacing: 0.05rem;
+	margin: 0;
+	line-height: 1.2;
+}
+
+.work-card--active .work-card__title {
+	color: var(--card-accent);
+}
+
+.work-card__tech {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.78rem;
+	letter-spacing: 0.12rem;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.45);
+}
+
+.work-card--active .work-card__tech {
+	color: rgba(31, 195, 255, 0.75);
+}
+
+.work-card__desc {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.98rem;
+	line-height: 1.7rem;
+	color: rgba(255, 255, 255, 0.65);
+	margin-bottom: 1.4rem;
+}
+
+.work-card__link {
+	display: inline-block;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.88rem;
+	font-weight: 600;
+	letter-spacing: 0.08rem;
+	color: var(--card-accent);
+	text-decoration: none;
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(4px);
+	transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+}
+
+.work-card--active .work-card__link {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0);
+}
+
+.work-card__link:hover {
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+@media screen and (max-width: 768px) {
+	.my-work {
+		flex-direction: column;
+		padding: 1rem 2rem;
+	}
+
+	.my-work>div {
+		width: 100%;
+		padding: 0.5rem;
+	}
+
+	.my-work .title {
+		margin-top: 2rem;
+		text-align: center;
+	}
+
+	.my-work__right {
+		gap: 3rem;
+		padding-top: 8vh;
+		padding-bottom: 8vh;
+	}
+
+	.work-card {
+		max-width: 100%;
+	}
+
+	.work-card__title {
+		font-size: 1.4rem;
+	}
+}

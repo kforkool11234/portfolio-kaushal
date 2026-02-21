@@ -1,0 +1,15 @@
+.mouse-trail-canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+	z-index: 99999999;
+}
+
+@media screen and (max-width: 750px) {
+	.mouse-trail-canvas {
+		display: none;
+	}
+}
