@@ -3,6 +3,15 @@ import { SectionTitle } from '../components/section-title.component';
 
 const projects = [
 	{
+		title: 'RailMilap',
+		tech: 'Django · React · PostgreSQL · BS4',
+		description:
+			'An intelligent connecting-train engine for Indian Railways. Processes 450,000+ schedule records using highly optimized custom 4-way JOIN queries in raw SQL to find fastest two-train interchanges. Features a fault-tolerant hybrid scraping pipeline and complex temporal algorithms to accurately calculate layovers.',
+		link: 'https://railmilap-38by.vercel.app/',
+		githubLink: 'https://github.com/kforkool11234/railmilap',
+		accent: 'rgb(255, 140, 66)',
+	},
+	{
 		title: 'SyncFlow',
 		tech: 'React · Node.js · MongoDB · Socket.io',
 		description:
@@ -25,15 +34,6 @@ const projects = [
 			'Developed SmartMarks, a real-time bookmark manager using Next.js 15 (App Router), Supabase (Auth, PostgreSQL, Realtime), and Tailwind CSS. Implemented Google OAuth for authentication, Row Level Security for data privacy, and optimistic UI updates for instant feedback. Deployed on Vercel with environment-based configuration for local and production.',
 		link: 'https://bookmarks-delta-ten.vercel.app/',
 		accent: 'rgb(155, 100, 255)',
-	},
-	{
-		title: 'RailMilap',
-		tech: 'Django · React · PostgreSQL · BS4',
-		description:
-			'An intelligent connecting-train engine for Indian Railways. Processes 450,000+ schedule records using highly optimized custom 4-way JOIN queries in raw SQL to find fastest two-train interchanges. Features a fault-tolerant hybrid scraping pipeline and complex temporal algorithms to accurately calculate layovers.',
-		link: 'https://railmilap-38by.vercel.app/',
-		githubLink: 'https://github.com/kforkool11234/railmilap',
-		accent: 'rgb(255, 140, 66)',
 	},
 ];
 
