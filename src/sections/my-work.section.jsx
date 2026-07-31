@@ -26,7 +26,15 @@ const projects = [
 		link: 'https://bookmarks-delta-ten.vercel.app/',
 		accent: 'rgb(155, 100, 255)',
 	},
-
+	{
+		title: 'RailMilap',
+		tech: 'Django · React · PostgreSQL · BS4',
+		description:
+			'An intelligent connecting-train engine for Indian Railways. Processes 450,000+ schedule records using highly optimized custom 4-way JOIN queries in raw SQL to find fastest two-train interchanges. Features a fault-tolerant hybrid scraping pipeline and complex temporal algorithms to accurately calculate layovers.',
+		link: 'https://railmilap-38by.vercel.app/',
+		githubLink: 'https://github.com/kforkool11234/railmilap',
+		accent: 'rgb(255, 140, 66)',
+	},
 ];
 
 const WorkCard = ({ project, isActive }) => {
@@ -40,14 +48,28 @@ const WorkCard = ({ project, isActive }) => {
 				<span className='work-card__tech'>{project.tech}</span>
 			</div>
 			<p className='work-card__desc'>{project.description}</p>
-			<a
-				className='work-card__link'
-				href={project.link}
-				target='_blank'
-				rel='noreferrer'
-			>
-				View Project →
-			</a>
+			<div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem' }}>
+				<a
+					className='work-card__link'
+					href={project.link}
+					target='_blank'
+					rel='noreferrer'
+					style={{ marginTop: 0 }}
+				>
+					Live Project →
+				</a>
+				{project.githubLink && (
+					<a
+						className='work-card__link'
+						href={project.githubLink}
+						target='_blank'
+						rel='noreferrer'
+						style={{ marginTop: 0 }}
+					>
+						GitHub →
+					</a>
+				)}
+			</div>
 		</div>
 	);
 };
