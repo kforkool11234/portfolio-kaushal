@@ -7,7 +7,7 @@ const timeline = [
 			{
 				title: 'Bachelor of Technology',
 				place: 'Vellore Institute of Technology',
-				timePeriod: '2022 - Present',
+				timePeriod: '2022-2026',
 				description: '',
 			},
 		],

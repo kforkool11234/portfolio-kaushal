@@ -1,4 +1,4 @@
-import { DiMongodb, DiMsqlServer } from 'react-icons/di';
+import { DiMongodb, DiPostgresql } from 'react-icons/di';
 import { FaAws, FaBootstrap, FaNodeJs, FaReact } from 'react-icons/fa';
 import {
 	SiDjango,
@@ -57,9 +57,9 @@ const techs = [
 		heading: 'Databases I Use',
 		items: [
 			{
-				title: 'MsSQL',
-				icon: <DiMsqlServer color='rgb(230, 50, 42)' />,
-				color: 'rgb(241, 83, 75, 0.5)',
+				title: 'PostgreSQL',
+				icon: <DiPostgresql color='rgb(51, 103, 145)' />,
+				color: 'rgba(51, 103, 145, 0.6)',
 			},
 			{
 				title: 'MongoDB',
